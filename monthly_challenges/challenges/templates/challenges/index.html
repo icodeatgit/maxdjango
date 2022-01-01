@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css-files %}
+    <link rel="stylesheet" href="{% static "challenges/challenges.css" %}"> 
+{% endblock %}
+{% block page-title %}All Challenges of 2022 {% endblock  %}
+
+{% block content %}
+    {% include "./includes/header.html" %}
+
+    <h1 style= "color:red";>Select a month from below</style></h1>
+    <ul>
+        {% for month1 in months %}
+            <li><a href ="{% url 'month-challenge' month1 %}">{{month1}}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

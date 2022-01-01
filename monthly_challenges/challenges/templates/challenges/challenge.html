@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page-title %}
+     {{month | title }} Challenge
+{% endblock %}
+
+{% block content %}
+    {% include "./includes/header.html"%}
+
+    {% if text is not None %}
+    <h1>This is a html template Django for {{month | title}} </h1>
+    <h2>{{ text }}</h2>
+    {% else %}
+    <p> There is no challenge for this month yet !</p>
+    {% endif %}
+
+{% endblock  %}
+    
